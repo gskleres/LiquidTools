@@ -5,20 +5,21 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Xml.Linq;
 
-namespace CivicCostUpdates
+namespace DistrictCostUpdates
 {
-	class Civics
-	{
-		// 
-		private const string DistrictFilePath = @"F:\SteamLib\steamapps\common\Sid Meier's Civilization VI\Base\Assets\Gameplay\Data\Civics.xml";
-		private const string OutputModFile = @"F:\SteamLib\steamapps\common\Sid Meier's Civilization VI\DLC\Liquid\LiquidMod\Data\LowerCivicCost.xml";
-		private const float CostModifier = 0.75f;
+	class Districts
+    {
+        // params
+        private const string DistrictFilePath = @"F:\SteamLib\steamapps\common\Sid Meier's Civilization VI\Base\Assets\Gameplay\Data\Districts.xml";
+        private const string OutputModFile = @"F:\SteamLib\steamapps\common\Sid Meier's Civilization VI\DLC\Liquid\LiquidMod\Data\LowerDistrictCost.xml";
+        private const float CostModifier = 0.75f;
+
 
 		private const string GameInfoRootNodeName = "GameInfo";
 		private const string RowElemName = "Row";
-		private const string ElementNodeName = "Civics";
+		private const string ElementNodeName = "Districts";
 		private const string CostAttribute = "Cost";
-		private const string KeyAttribute = "CivicType";
+		private const string KeyAttribute = "DistrictType";
 
 		private const string UpdateElemName = "Update";
 		private const string SetElemName = "Set";
@@ -26,7 +27,7 @@ namespace CivicCostUpdates
 			
 		static void Main(string[] args)
 		{
-		
+            
 
 			XDocument reader = XDocument.Load(DistrictFilePath);
 			XDocument doc = XDocument.Load(OutputModFile);
@@ -36,14 +37,8 @@ namespace CivicCostUpdates
 			output.Descendants().Remove();
 			foreach (var row in techs.Elements(RowElemName))
 			{
-				/*
-						<Update>
-							<Set YieldChange="3" />
-							<Where ImprovementType="IMPROVEMENT_FARM" YieldType="YIELD_FOOD" />
-						</Update>
-				*/
-
-				var costStr = row.Attribute(CostAttribute).Value;
+		
+                var costStr = row.Attribute(CostAttribute).Value;
 				var key = row.Attribute(KeyAttribute).Value;
 				int cost;
 				if (int.TryParse(costStr, out cost) == false)

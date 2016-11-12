@@ -4,11 +4,11 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{5EB12C2D-C534-4A8E-B402-9935AB23FE88}</ProjectGuid>
+    <ProjectGuid>{99D806D6-066C-4610-8CC9-DE6BC3DA113B}</ProjectGuid>
     <OutputType>Exe</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>CivTechUpdates</RootNamespace>
-    <AssemblyName>CivTechUpdates</AssemblyName>
+    <RootNamespace>CivicCostUpdates</RootNamespace>
+    <AssemblyName>CivicCostUpdates</AssemblyName>
     <TargetFrameworkVersion>v4.5.2</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
@@ -43,7 +43,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Tech.cs" />
+    <Compile Include="Civics.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>

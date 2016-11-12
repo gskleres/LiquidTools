@@ -8,7 +8,7 @@ using System.Xml.Linq;
 
 namespace CivTechUpdates
 {
-    class Program
+    class Tech
     {
         static void Main(string[] args)
         {
